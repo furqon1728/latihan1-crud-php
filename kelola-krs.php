@@ -29,73 +29,69 @@
       <a class="navbar-brand" href="#">
         <strong>TUGAS CRUD</strong>
       </a>
+    </div>
+  </nav>
+  <!-- AKHIR NAVBAR -->
 
-      <!-- TAB PILIHAN -->
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">KRS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="kumpulan-tabel.php">Tabel Basis Data</a>
-        </li>
-        </ul>
-        <!-- AKHIR TAB PILIHAN -->
-      </div>
-    </nav>
-    <!-- AKHIR NAVBAR -->
-
-
+  <!-- CONTAINER BODY CONTENT -->
   <div class="container mt-5 pt-4">
-
     <!-- Figure JUDUL TABEL -->
     <figure class="text-light">
       <blockquote class="blockquote">
-          <h1>Tabel KRS</h1>
-        </blockquote>
-        <figcaption class="blockquote-footer text-light">
-          Berisi <cite title="data krs">data krs</cite>
-        </figcaption>
-      </figure>
-      <!-- AKHIR FIGURE JUDUL TABEL -->
+        <h1>Tabel KRS</h1>
+      </blockquote>
+    </figure>
+    <!-- AKHIR FIGURE JUDUL TABEL -->
 
-      <!-- BUTTON TAMBAH DATA KRS
-      <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
-      <i class="bi bi-plus-square"></i>
-      Tambah Data
-      </a> -->
+    <!-- FORM -->
+    <div class="container text-light mt-5">
 
-      <!-- TABLE KRS -->
-      <table class="table table-hover mt-5 table-dark">
-        <thead class="table-dark">
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">Nama Lengkap</th>
-          <th scope="col">Mata Kuliah</th>
-          <th scope="col">Keterangan</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider">
-        <tr>
-          <th scope="row">1</th>
-          <td>Siska Putri</td>
-          <td>Basis Data</td>
-          <td>Siska Putri Mengambil Mata Kuliah Basis Data(3sks)</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Ujang Aziz</td>
-          <td>Pemrograman Berbasis Web</td>
-          <td>Ujang Aziz Mengambil Mata Kuliah Pemrograman Berbasis Web(3sks)</td>
-        </tr>
-        
-        
-      </tbody>
-    </table>
-    <!-- AKHIR TABLE KRS -->
+      <div class="mb-3 row">
+        <label for="inputKdMk" class="col-sm-2 col-form-label">Kode MK</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputKdMk" placeholder="Ex: MK01">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="inputNamaMk" class="col-sm-2 col-form-label">Nama MK</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputNamaMk" placeholder="Masukkan Nama">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="inputSks" class="col-sm-2 col-form-label">Jumlah SKS</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputSks" placeholder="Masukkan 1 digit angka, Ex : 3">
+        </div>
+      </div>
+
+      <div class="mb-3 row mt-5">
+        <!-- BUTTON TAMBAH DATA MAHASISWA -->
+        <div class="col">
+          <button type="button" href="#" class="btn btn-primary active" role="button" data-bs-toggle="button"
+            aria-pressed="true">
+            <i class="bi bi-plus-square"></i>
+            Tambah Data
+          </button>
+
+          <a type="button" href="kumpulan-tabel.php" class="btn btn-danger active" role="button" aria-pressed="true">
+            <i class="bi bi-backspace"></i>
+            Batal
+          </a>
+
+        </div>
+        <!-- AKHIR BUTTON TAMBAH DATA MAHASISWA -->
+      </div>
+
+    </div>
+    <!-- AKHIR FORM -->
   </div>
+  <!-- AKHIR CONTAINER BODY CONTENT -->
 
 
-    
+
   <!-- CDN LINK JS BOOTSTRAP -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

@@ -4,6 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FAVICON -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
   <title>Latihan CRUD</title>
   <!-- CDN LINK CSS BOOTSTRAP  -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -47,19 +53,19 @@
         <h1>Tabel Mahasiswa</h1>
       </blockquote>
       <figcaption class="blockquote-footer text-light">
-        Berisi <cite title="data krs">Tabel Basis Data</cite>
+        Berisi Basis Data <cite title="data krs">Tabel Mahasiswa</cite>
       </figcaption>
     </figure>
     <!-- AKHIR FIGURE JUDUL TABEL -->
 
-    <!-- BUTTON TAMBAH DATA KRS -->
-    <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
+    <!-- BUTTON TAMBAH DATA MAHASISWA -->
+    <a href="kelola-mahasiswa.php" class="btn btn-primary active" role="button" aria-pressed="true">
       <i class="bi bi-plus-square"></i>
       Tambah Data
     </a>
 
 
-    <!-- TABLE KRS -->
+    <!-- TABLE MAHASISWA -->
     <table class="table table-hover mt-5 table-dark">
       <thead class="table-dark">
         <tr>
@@ -78,7 +84,7 @@
           <td>Jakarta Selatan</td>
 
           <td>
-            <a type="button" class="btn btn-success"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-mahasiswa.php"> <i class="bi bi-pencil"></i> </a>
             <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
@@ -97,7 +103,7 @@
       </tbody>
     </table>
   </div>
-  <!-- AKHIR TABLE KRS -->
+  <!-- AKHIR TABLE MAHASISWA -->
 
   <!-- AKHIR DATABASE TABLE MAHASISWA -->
 
@@ -111,19 +117,19 @@
         <h1>Tabel Mata Kuliah</h1>
       </blockquote>
       <figcaption class="blockquote-footer text-light">
-        Berisi <cite title="data krs">data matakuliah</cite>
+        Berisi Basis Data <cite title="data krs">Tabel matakuliah</cite>
       </figcaption>
     </figure>
     <!-- AKHIR FIGURE JUDUL TABEL -->
 
     <!-- BUTTON TAMBAH DATA KRS -->
-    <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
+    <a href="kelola-matakuliah.php" class="btn btn-primary active" role="button" aria-pressed="true">
       <i class="bi bi-plus-square"></i>
       Tambah Data
     </a>
 
 
-    <!-- TABLE KRS -->
+    <!-- TABLE MATAKULIAH -->
     <table class="table table-hover mt-5 table-dark">
       <thead class="table-dark">
         <tr>
@@ -140,7 +146,7 @@
           <td>3</td>
 
           <td>
-            <a type="button" class="btn btn-success"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-matakuliah.php"> <i class="bi bi-pencil"></i> </a>
             <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
@@ -161,7 +167,7 @@
       </tbody>
     </table>
   </div>
-  <!-- AKHIR TABLE KRS -->
+  <!-- AKHIR TABLE MATAKULIAH -->
   <!-- AKHIR DATABASE TABLE MATAKULIAH -->
 
   <!-- DATABASE TABLE KRS -->
@@ -173,13 +179,13 @@
         <h1>Tabel KRS</h1>
       </blockquote>
       <figcaption class="blockquote-footer text-light">
-        Berisi <cite title="data krs">data krs</cite>
+        Berisi Basis Data <cite title="data krs">Tabel krs</cite>
       </figcaption>
     </figure>
     <!-- AKHIR FIGURE JUDUL TABEL -->
 
     <!-- BUTTON TAMBAH DATA KRS -->
-    <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
+    <a href="kelola-krs.php" class="btn btn-primary active" role="button" aria-pressed="true">
       <i class="bi bi-plus-square"></i>
       Tambah Data
     </a>
@@ -202,7 +208,7 @@
           <td>MK01</td>
 
           <td>
-            <a type="button" class="btn btn-success"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-krs.php"> <i class="bi bi-pencil"></i> </a>
             <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
