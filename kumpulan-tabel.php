@@ -108,7 +108,7 @@
 
           <td>
             <a type="button" class="btn btn-success" href="kelola-mahasiswa.php?ubah=<?php echo $result['npm'];?>"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger" href="proses.php?hapus=<?php echo $result['npm'];?>"> <i class="bi bi-trash"></i> </a>
+            <a type="button" class="btn btn-danger" href="proses-mahasiswa.php?hapus=<?php echo $result['npm'];?>"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
         <?php
@@ -171,7 +171,7 @@
 
           <td>
             <a type="button" class="btn btn-success" href="kelola-matakuliah.php?ubah=<?php echo $result['kodemk'];?>"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger" href="proses.php?hapus=<?php echo $result['kodemk'];?>"> <i class="bi bi-trash"></i> </a>
+            <a type="button" class="btn btn-danger" href="proses-matakuliah.php?hapus=<?php echo $result['kodemk'];?>"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
        <?php
@@ -232,7 +232,7 @@
 
           <td>
             <a type="button" class="btn btn-success" href="kelola-krs.php?ubah=<?php echo $result['id'];?>"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger" href="proses.php?hapus=<?php echo $result['id'];?>"> <i class="bi bi-trash"></i> </a>
+            <a type="button" class="btn btn-danger" href="proses-krs.php?hapus=<?php echo $result['id'];?>"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
         <?php

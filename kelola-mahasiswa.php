@@ -50,7 +50,7 @@
 
     <!-- CONTAINER FORM -->
     <div class="container text-light mt-5">
-        <form method="POST" action="proses.php" >
+        <form method="POST" action="proses-mahasiswa.php" >
 
           <div class="mb-3 row">
             <label for="inputNpm" class="col-sm-2 col-form-label">NPM</label>

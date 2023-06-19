@@ -50,7 +50,7 @@
 
     <!-- CONTAINER FORM -->
     <div class="container text-light mt-5">
-      <form action="proses.php" method="POST">
+      <form action="proses-krs.php" method="POST">
         <div class="mb-3 row">
           <label for="inputKdMk" class="col-sm-2 col-form-label">Kode MK</label>
           <div class="col-sm-10">
