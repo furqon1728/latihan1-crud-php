@@ -1,3 +1,13 @@
+<?php 
+  include 'koneksi.php';
+  $query_mahasiswa = "SELECT * FROM mahasiswa"; 
+  $sql_mahasiswa = mysqli_query($koneksi, $query_mahasiswa);
+  $query_matakuliah = "SELECT * FROM matakuliah"; 
+  $sql_matakuliah = mysqli_query($koneksi, $query_matakuliah);
+  $query_krs = "SELECT * FROM krs"; 
+  $sql_krs = mysqli_query($koneksi, $query_krs);
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -78,28 +88,31 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
+        <?php
+          while ($result = mysqli_fetch_assoc($sql_mahasiswa)) {
+        ?>
         <tr>
-          <td>001</td>
-          <td>Siska Putri</td>
-          <td>Sistem Informasi</td>
-          <td>Jakarta Selatan</td>
+          <td>
+            <?php echo $result['npm'];?>
+          </td>
+          <td>
+            <?php echo $result['nama'];?>
+          </td>
+          <td>
+            <?php echo $result['jurusan'];?>
+          </td>
+          <td>
+            <?php echo $result['alamat'];?>
+          </td>
 
           <td>
             <a type="button" class="btn btn-success" href="kelola-mahasiswa.php?ubah=1"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
+            <a type="button" class="btn btn-danger" href="proses.php?hapus=1"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
-
-        <tr>
-          <td>002</td>
-          <td>Ujang Aziz</td>
-          <td>Sistem Informasi</td>
-          <td>Jakarta Barat</td>
-          <td>
-            <a type="button" class="btn btn-success" href="kelola-mahasiswa.php?ubah=2"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
-          </td>
-        </tr>
+        <?php
+         }
+        ?>
 
       </tbody>
     </table>
@@ -141,29 +154,28 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
+      <?php
+          while ($result = mysqli_fetch_assoc($sql_matakuliah)) {
+        ?>
         <tr>
-          <td>MK01</td>
-          <td>Basis Data</td>
-          <td>3</td>
+          <td>
+            <?php echo $result['kodemk'];?>
+          </td>
+          <td>
+          <?php echo $result['nama'];?>
+          </td>
+          <td>
+          <?php echo $result['jumlah_sks']." sks";?>
+          </td>
 
           <td>
             <a type="button" class="btn btn-success" href="kelola-matakuliah.php?ubah=1"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
+            <a type="button" class="btn btn-danger" href="proses.php?hapus=1"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
-
-        <tr>
-          <td>MK02</td>
-          <td>Pemrograman Berbasis Web</td>
-          <td>3</td>
-
-          <td>
-            <a type="button" class="btn btn-success" href="kelola-matakuliah.php?ubah=2"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
-          </td>
-        </tr>
-
-       
+       <?php
+          }
+        ?>
 
       </tbody>
     </table>
@@ -203,26 +215,28 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
+      <?php
+          while ($result = mysqli_fetch_assoc($sql_krs)) {
+        ?>
         <tr>
-          <td>1</td>
-          <td>001</td>
-          <td>MK01</td>
+          <td>
+            <?php echo $result['id'];?>
+          </td>
+          <td>
+            <?php echo $result['mahasiswa_npm'];?>
+          </td>
+          <td>
+            <?php echo $result['matakuliah_kodemk'];?>
+          </td>
 
           <td>
             <a type="button" class="btn btn-success" href="kelola-krs.php?ubah=1"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
+            <a type="button" class="btn btn-danger" href="proses.php?hapus=2"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
-
-        <tr>
-          <td>2</td>
-          <td>002</td>
-          <td>MK02</td>
-          <td>
-            <a type="button" class="btn btn-success" href="kelola-krs.php?ubah=2"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
-          </td>
-        </tr>
+        <?php
+          }
+        ?>
 
       </tbody>
     </table>

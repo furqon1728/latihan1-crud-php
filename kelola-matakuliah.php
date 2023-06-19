@@ -1,3 +1,7 @@
+<?php 
+  include 'koneksi.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -44,8 +48,10 @@
     </figure>
     <!-- AKHIR FIGURE JUDUL TABEL -->
 
-    <!-- FORM -->
+    <!-- CONTAINER FORM -->
     <div class="container text-light mt-5">
+
+      <form action="proses.php" method="POST">
 
       <div class="mb-3 row">
         <label for="inputKdMk" class="col-sm-2 col-form-label">Kode MK</label>
@@ -74,14 +80,14 @@
         <?php
             if (isset($_GET['ubah'])) {
           ?>
-          <button type="button" href="#" class="btn btn-success active" role="button" data-bs-toggle="button" aria-pressed="true">
+          <button type="submit" name="aksi" value="edit" class="btn btn-success active">
             <i class="bi bi-save2"></i>
             Simpan Perubahan
           </button>
           <?php
           } else {
             ?>
-            <button type="button" href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
+            <button type="submit" name="aksi" value="add"  class="btn btn-primary active">
               <i class="bi bi-plus-square"></i>
               Tambah Data
             </button>
@@ -89,17 +95,17 @@
           }
           ?>
 
-          <a type="button" href="kumpulan-tabel.php" class="btn btn-danger active" role="button" aria-pressed="true">
+          <a type="button" href="kumpulan-tabel.php" class="btn btn-danger active">
             <i class="bi bi-backspace"></i>
             Batal
           </a>
-
+          <!-- AKHIR BUTTON TAMBAH DATA MAHASISWA -->
         </div>
-        <!-- AKHIR BUTTON TAMBAH DATA MAHASISWA -->
+        
+      </form>
       </div>
-
     </div>
-    <!-- AKHIR FORM -->
+    <!-- AKHIR CONTAINER FORM -->
   </div>
   <!-- AKHIR CONTAINER BODY CONTENT -->
 

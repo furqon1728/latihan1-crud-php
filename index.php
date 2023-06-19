@@ -1,3 +1,7 @@
+<?php 
+  include 'koneksi.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 

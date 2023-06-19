@@ -1,3 +1,7 @@
+<?php 
+  include 'koneksi.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -44,62 +48,63 @@
     </figure>
     <!-- AKHIR FIGURE JUDUL TABEL -->
 
-    <!-- FORM -->
+    <!-- CONTAINER FORM -->
     <div class="container text-light mt-5">
-
-      <div class="mb-3 row">
-        <label for="inputKdMk" class="col-sm-2 col-form-label">Kode MK</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputKdMk" placeholder="Ex: MK01">
+      <form action="proses.php" method="POST">
+        <div class="mb-3 row">
+          <label for="inputKdMk" class="col-sm-2 col-form-label">Kode MK</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputKdMk" placeholder="Ex: MK01">
+          </div>
         </div>
-      </div>
-
-      <div class="mb-3 row">
-        <label for="inputNamaMk" class="col-sm-2 col-form-label">Nama MK</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputNamaMk" placeholder="Masukkan Nama">
+  
+        <div class="mb-3 row">
+          <label for="inputNamaMk" class="col-sm-2 col-form-label">Nama MK</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputNamaMk" placeholder="Masukkan Nama">
+          </div>
         </div>
-      </div>
-
-      <div class="mb-3 row">
-        <label for="inputSks" class="col-sm-2 col-form-label">Jumlah SKS</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputSks" placeholder="Masukkan 1 digit angka, Ex : 3">
+  
+        <div class="mb-3 row">
+          <label for="inputSks" class="col-sm-2 col-form-label">Jumlah SKS</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputSks" placeholder="Masukkan 1 digit angka, Ex : 3">
+          </div>
         </div>
-      </div>
-
-      <div class="mb-3 row mt-5">
-        <!-- BUTTON TAMBAH DATA MAHASISWA -->
-        <div class="col">
-        <?php
-            if (isset($_GET['ubah'])) {
-          ?>
-          <button type="button" href="#" class="btn btn-success active" role="button" data-bs-toggle="button" aria-pressed="true">
-            <i class="bi bi-save2"></i>
-            Simpan Perubahan
-          </button>
+  
+        <div class="mb-3 row mt-5">
+          <!-- BUTTON TAMBAH DATA MAHASISWA -->
+          <div class="col">
           <?php
-          } else {
+              if (isset($_GET['ubah'])) {
             ?>
-            <button type="button" href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
-              <i class="bi bi-plus-square"></i>
-              Tambah Data
+            <button type="submit" name="aksi" value="edit" class="btn btn-success active" >
+              <i class="bi bi-save2"></i>
+              Simpan Perubahan
             </button>
-          <?php
-          }
-          ?>
-
-          <a type="button" href="kumpulan-tabel.php" class="btn btn-danger active" role="button" aria-pressed="true">
-            <i class="bi bi-backspace"></i>
-            Batal
-          </a>
-
+            <?php
+            } else {
+              ?>
+              <button type="submit" name="aksi" value="add" class="btn btn-primary active" >
+                <i class="bi bi-plus-square"></i>
+                Tambah Data
+              </button>
+            <?php
+            }
+            ?>
+  
+            <a type="button" href="kumpulan-tabel.php" class="btn btn-danger active"  >
+              <i class="bi bi-backspace"></i>
+              Batal
+            </a>
+  
+          </div>
+          <!-- AKHIR BUTTON TAMBAH DATA MAHASISWA -->
         </div>
-        <!-- AKHIR BUTTON TAMBAH DATA MAHASISWA -->
-      </div>
+      </form>
 
     </div>
-    <!-- AKHIR FORM -->
+    <!-- AKHIR CONTAINER FORM -->
   </div>
   <!-- AKHIR CONTAINER BODY CONTENT -->
 
