@@ -61,13 +61,6 @@
           </div>
       </div>
       
-      <!-- <div class="mb-3 row">
-        <label for="inputJurusan" class="col-sm-2 col-form-label">Jurusan</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputJurusan" placeholder="Sistem Infromasi or Teknik Informatika">
-        </div>
-      </div> -->
-      
       <div class="mb-3 row">
         <label for="inputJurusan" class="col-sm-2 col-form-label">Jurusan</label>
           <div class="col-sm-10">
@@ -89,10 +82,23 @@
       <div class="mb-3 row mt-5">
         <!-- BUTTON TAMBAH DATA MAHASISWA -->
         <div class="col">
-          <button type="button" href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
-            <i class="bi bi-plus-square"></i>
-            Tambah Data
+          <?php
+            if (isset($_GET['ubah'])) {
+          ?>
+          <button type="button" href="#" class="btn btn-success active" role="button" data-bs-toggle="button" aria-pressed="true">
+            <i class="bi bi-save2"></i>
+            Simpan Perubahan
           </button>
+          <?php
+          } else {
+            ?>
+            <button type="button" href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
+              <i class="bi bi-plus-square"></i>
+              Tambah Data
+            </button>
+          <?php
+          }
+          ?>
           
           <a type="button" href="kumpulan-tabel.php" class="btn btn-danger active" role="button" aria-pressed="true">
             <i class="bi bi-backspace"></i>

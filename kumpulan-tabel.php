@@ -85,7 +85,7 @@
           <td>Jakarta Selatan</td>
 
           <td>
-            <a type="button" class="btn btn-success" href="kelola-mahasiswa.php"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-mahasiswa.php?ubah=1"> <i class="bi bi-pencil"></i> </a>
             <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
@@ -96,7 +96,7 @@
           <td>Sistem Informasi</td>
           <td>Jakarta Barat</td>
           <td>
-            <a type="button" class="btn btn-success"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-mahasiswa.php?ubah=2"> <i class="bi bi-pencil"></i> </a>
             <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
@@ -147,7 +147,7 @@
           <td>3</td>
 
           <td>
-            <a type="button" class="btn btn-success" href="kelola-matakuliah.php"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-matakuliah.php?ubah=1"> <i class="bi bi-pencil"></i> </a>
             <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
@@ -158,7 +158,7 @@
           <td>3</td>
 
           <td>
-            <a type="button" class="btn btn-success"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-matakuliah.php?ubah=2"> <i class="bi bi-pencil"></i> </a>
             <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
@@ -209,7 +209,7 @@
           <td>MK01</td>
 
           <td>
-            <a type="button" class="btn btn-success" href="kelola-krs.php"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-krs.php?ubah=1"> <i class="bi bi-pencil"></i> </a>
             <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
@@ -219,7 +219,7 @@
           <td>002</td>
           <td>MK02</td>
           <td>
-            <a type="button" class="btn btn-success"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-krs.php?ubah=2"> <i class="bi bi-pencil"></i> </a>
             <a type="button" class="btn btn-danger"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
