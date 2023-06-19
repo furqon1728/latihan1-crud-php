@@ -6,6 +6,7 @@
   $sql_matakuliah = mysqli_query($koneksi, $query_matakuliah);
   $query_krs = "SELECT * FROM krs"; 
   $sql_krs = mysqli_query($koneksi, $query_krs);
+  $no = 0;
 ?>
 
 <!DOCTYPE html>
@@ -106,8 +107,8 @@
           </td>
 
           <td>
-            <a type="button" class="btn btn-success" href="kelola-mahasiswa.php?ubah=1"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger" href="proses.php?hapus=1"> <i class="bi bi-trash"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-mahasiswa.php?ubah=<?php echo $result['npm'];?>"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-danger" href="proses.php?hapus=<?php echo $result['npm'];?>"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
         <?php
@@ -169,8 +170,8 @@
           </td>
 
           <td>
-            <a type="button" class="btn btn-success" href="kelola-matakuliah.php?ubah=1"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger" href="proses.php?hapus=1"> <i class="bi bi-trash"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-matakuliah.php?ubah=<?php echo $result['kodemk'];?>"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-danger" href="proses.php?hapus=<?php echo $result['kodemk'];?>"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
        <?php
@@ -230,8 +231,8 @@
           </td>
 
           <td>
-            <a type="button" class="btn btn-success" href="kelola-krs.php?ubah=1"> <i class="bi bi-pencil"></i> </a>
-            <a type="button" class="btn btn-danger" href="proses.php?hapus=2"> <i class="bi bi-trash"></i> </a>
+            <a type="button" class="btn btn-success" href="kelola-krs.php?ubah=<?php echo $result['id'];?>"> <i class="bi bi-pencil"></i> </a>
+            <a type="button" class="btn btn-danger" href="proses.php?hapus=<?php echo $result['id'];?>"> <i class="bi bi-trash"></i> </a>
           </td>
         </tr>
         <?php
