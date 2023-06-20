@@ -96,7 +96,7 @@
           <?php echo $result['nama_matkul'];?>
           </td>
           <td>
-          <?php echo "<font color='#E63E6D'>".$result['nama_mhs']."</font>" . " Mengambil Mata Kuliah"."<font color='#E63E6D'> ".$result['nama_matkul']."</font>" ." (".$result['jumlah_sks']."SKS)";?>
+          <?php echo "<font color='#0D6EFD'>".$result['nama_mhs']."</font>" . " Mengambil Mata Kuliah"."<font color='#0D6EFD'> ".$result['nama_matkul']."</font>" ." (".$result['jumlah_sks']."SKS)";?>
           </td>
         </tr>
         <?php
