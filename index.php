@@ -1,5 +1,9 @@
 <?php 
   include 'koneksi.php';
+
+  $query = "SELECT mahasiswa.nama AS 'nama_mhs' , matakuliah.nama AS 'nama_matkul', matakuliah.jumlah_sks FROM mahasiswa JOIN krs ON mahasiswa.npm = krs.mahasiswa_npm JOIN matakuliah ON matakuliah.kodemk = krs.matakuliah_kodemk;";
+  $sql = mysqli_query($koneksi, $query);
+  $no = 0;
 ?>
 
 <!DOCTYPE html>
@@ -56,11 +60,9 @@
     <figure class="text-light">
       <blockquote class="blockquote">
           <h1>Tabel KRS</h1>
-        </blockquote>
-        <figcaption class="blockquote-footer text-light">
-          Berisi <cite title="data krs">data krs</cite>
-        </figcaption>
-      </figure>
+          <p>Berisi Data Mahasiswa yang Mengambil KRS</p>
+      </blockquote>
+    </figure>
       <!-- AKHIR FIGURE JUDUL TABEL -->
 
       <!-- BUTTON TAMBAH DATA KRS
@@ -80,20 +82,26 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
+      <?php
+          while ($result = mysqli_fetch_assoc($sql)) {
+        ?>
         <tr>
-          <th scope="row">1</th>
-          <td>Siska Putri</td>
-          <td>Basis Data</td>
-          <td>Siska Putri Mengambil Mata Kuliah Basis Data(3sks)</td>
+          <th scope="row">
+            <?php echo ++$no; ?>
+          </th>
+          <td>
+          <?php echo $result['nama_mhs'];?>
+          </td>
+          <td>
+          <?php echo $result['nama_matkul'];?>
+          </td>
+          <td>
+          <?php echo "<font color='#E63E6D'>".$result['nama_mhs']."</font>" . " Mengambil Mata Kuliah"."<font color='#E63E6D'> ".$result['nama_matkul']."</font>" ." (".$result['jumlah_sks']."SKS)";?>
+          </td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Ujang Aziz</td>
-          <td>Pemrograman Berbasis Web</td>
-          <td>Ujang Aziz Mengambil Mata Kuliah Pemrograman Berbasis Web(3sks)</td>
-        </tr>
-        
-        
+        <?php
+          }
+        ?>
       </tbody>
     </table>
     <!-- AKHIR TABLE KRS -->

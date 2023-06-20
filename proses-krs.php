@@ -40,19 +40,56 @@
         
           <!-- CONTAINER BODY CONTENT -->
           <div class="container mt-5 pt-5">
+
+          <!-- PHP PEMROSESAN -->
             <?php
               if (isset($_POST['aksi'])) {
                   if ($_POST['aksi'] == "add") {
-                      echo "<h2 class='text-light'>Tambah Data</h2> <a href='index.php'>[Home]</a>";
+                    $id = $_POST['inputId'];
+                    $inputNpmMahasiswa = $_POST['inputNpmMahasiswa'];
+                    $inputKdMK = $_POST['inputKdMK'];
+
+                    $query = "INSERT INTO krs VALUES(null, '$inputNpmMahasiswa', '$inputKdMK')";
+                    $sql = mysqli_query($koneksi, $query);
+
+                    if ($sql) {
+                      header("location: kumpulan-tabel.php");
+                    } else {
+                      echo $query;
+                    } 
+
                   }elseif ($_POST['aksi'] == "edit") {
-                      echo "<h2 class='text-light'>Edit Data</h2> <a href='index.php'>[Home]</a>";
+                    $id = $_POST['inputId'];
+                    $inputNpmMahasiswa = $_POST['inputNpmMahasiswa'];
+                    $inputKdMK = $_POST['inputKdMK'];
+
+                    $query = "UPDATE krs SET mahasiswa_npm='$inputNpmMahasiswa', matakuliah_kodemk='$inputKdMK' WHERE id='$id';";
+                    $sql = mysqli_query($koneksi, $query);
+
+                    if ($sql) {
+                      header("location: kumpulan-tabel.php");
+                    } else {
+                      echo $query;
+                    }
+
                   }
               }
 
               if (isset($_GET['hapus'])) {
-                echo "<h2 class='text-light'>Hapus Data</h2> <a href='index.php'>[Home]</a>";
+                $id = $_GET['hapus'];
+                $query = "DELETE FROM krs WHERE id = '$id'";
+                $sql = mysqli_query($koneksi, $query);
+                
+                if ($sql) {
+                  header("location: kumpulan-tabel.php");
+                } else {
+                  echo $query;
+                }
+
               }
             ?>
+            <!-- AKHIR PHP PEMROSESAN -->
+
           </div>
           <!-- AKHIR CONTAINER BODY CONTENT -->
         

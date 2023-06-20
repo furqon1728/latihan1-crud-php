@@ -7,7 +7,7 @@ use kuliah;
 create table mahasiswa(
 npm char(13) primary key,
 nama varchar(50),
-jurusan enum('Teknik Informatika', 'Sistem Informasi'),
+jurusan enum('Teknik Informatika', 'Sistem Operasi'),
 alamat text
 );
 

@@ -40,19 +40,59 @@
         
           <!-- CONTAINER BODY CONTENT -->
           <div class="container mt-5 pt-5">
+            
+            <!-- PHP PEMROSESAN -->
             <?php
               if (isset($_POST['aksi'])) {
                   if ($_POST['aksi'] == "add") {
-                      echo "<h2 class='text-light'>Tambah Data</h2> <a href='index.php'>[Home]</a>";
+                    $inputNpm = $_POST['inputNpm'];
+                    $inputNamaMhs = $_POST['inputNamaMhs'];
+                    $inputJurusan = $_POST['inputJurusan'];
+                    $inputAlamat = $_POST['inputAlamat'];
+
+                    $query = "INSERT INTO mahasiswa VALUES('$inputNpm', '$inputNamaMhs', '$inputJurusan', '$inputAlamat')";
+                    $sql = mysqli_query($koneksi, $query);
+
+                    if ($sql) {
+                      header("location: kumpulan-tabel.php");
+                      // echo "<h2 class='text-light'>Tambah Data</h2> <a href='index.php'>[Home]</a>"; 
+                    } else {
+                      echo $query;
+                    }
+
                   }elseif ($_POST['aksi'] == "edit") {
-                      echo "<h2 class='text-light'>Edit Data</h2> <a href='index.php'>[Home]</a>";
+                    $inputNpm = $_POST['inputNpm'];
+                    $inputNamaMhs = $_POST['inputNamaMhs'];
+                    $inputJurusan = $_POST['inputJurusan'];
+                    $inputAlamat = $_POST['inputAlamat'];
+
+                    $query = "UPDATE mahasiswa SET npm='$inputNpm', nama='$inputNamaMhs', jurusan='$inputJurusan', alamat='$inputAlamat' WHERE npm='$inputNpm';";
+                    $sql = mysqli_query($koneksi, $query);
+
+                    if ($sql) {
+                      header("location: kumpulan-tabel.php");
+                    } else {
+                      echo $query;
+                    }
+
                   }
               }
 
               if (isset($_GET['hapus'])) {
-                echo "<h2 class='text-light'>Hapus Data</h2> <a href='index.php'>[Home]</a>";
+                $npm = $_GET['hapus'];
+                $query = "DELETE FROM mahasiswa WHERE npm = '$npm'";
+                $sql = mysqli_query($koneksi, $query);
+                
+                if ($sql) {
+                  header("location: kumpulan-tabel.php");
+                } else {
+                  echo $query;
+                }
+                
               }
             ?>
+            <!-- AKHIR PHP PEMROSESAN -->
+
           </div>
           <!-- AKHIR CONTAINER BODY CONTENT -->
         

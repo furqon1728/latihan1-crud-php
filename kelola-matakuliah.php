@@ -1,5 +1,24 @@
 <?php 
   include 'koneksi.php';
+
+  $kodeMk = '';
+  $namaMk = '';
+  $sks = '';
+
+  if (isset($_GET['ubah'])) {
+    $kodeMk = $_GET['ubah'];
+
+    $query = "SELECT * FROM matakuliah WHERE kodemk = '$kodeMk';";
+    $sql = mysqli_query($koneksi, $query);
+
+    $result = mysqli_fetch_assoc($sql);
+
+    $namaMk = $result['kodemk'];
+    $namaMk = $result['nama'];
+    $sks = $result['jumlah_sks']; 
+
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -56,21 +75,21 @@
       <div class="mb-3 row">
         <label for="inputKdMk" class="col-sm-2 col-form-label">Kode MK</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputKdMk" placeholder="Ex: MK01">
+          <input required type="text" class="form-control" id="inputKdMk" name="inputKdMk" placeholder="Ex: MK01" value="<?php echo $kodeMk ?>">
         </div>
       </div>
 
       <div class="mb-3 row">
         <label for="inputNamaMk" class="col-sm-2 col-form-label">Nama MK</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputNamaMk" placeholder="Masukkan Nama">
+          <input required type="text" class="form-control" id="inputNamaMk" name="inputNamaMk" placeholder="Masukkan Nama Mata Kuliah" value="<?php echo $namaMk ?>">
         </div>
       </div>
 
       <div class="mb-3 row">
         <label for="inputSks" class="col-sm-2 col-form-label">Jumlah SKS</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputSks" placeholder="Masukkan 1 digit angka, Ex : 3">
+          <input required type="text" class="form-control" id="inputSks" name="inputSks" placeholder="Ex : 3" value="<?php echo $sks ?>">
         </div>
       </div>
 

@@ -2,15 +2,15 @@ USE kuliah;
 
 INSERT INTO mahasiswa(npm, nama, jurusan, alamat) 
 VALUES 
-('2110631250059','Siska Putri','Sistem Informasi','Jakarta Selatan'),
-('2110631250060','Ujang Aziz','Sistem Informasi','Subang'),
+('2110631250059','Siska Putri','Sistem Operasi','Jakarta Selatan'),
+('2110631250060','Ujang Aziz','Sistem Operasi','Subang'),
 ('2110631250061','Veronica Setyano','Teknik Informatika','Banten'),
-('2110631250062','Rizka Nurmala Putri','Sistem Informasi','Jakarta Barat'),
+('2110631250062','Rizka Nurmala Putri','Sistem Operasi','Jakarta Barat'),
 ('2110631250063','Eren Putra','Teknik Informatika','Karawang'),
 ('2110631250064','Putra Abdul Rachman','Teknik Informatika','Bekasi'),
-('2110631250065','Rachmat Andriyani','Sistem Informasi','Tangerang'),
-('2110631250066','Ayu Puspitasari','Sistem Informasi','Batak'),
-('2110631250067','Putri Ayuni','Sistem Informasi','Jakarta Timur'),
+('2110631250065','Rachmat Andriyani','Sistem Operasi','Tangerang'),
+('2110631250066','Ayu Puspitasari','Sistem Operasi','Batak'),
+('2110631250067','Putri Ayuni','Sistem Operasi','Jakarta Timur'),
 ('2110631250068','Andri Muhammad','Teknik Informatika','Depok');
 
 INSERT INTO matakuliah(kodemk, nama, jumlah_sks)

@@ -40,19 +40,55 @@
         
           <!-- CONTAINER BODY CONTENT -->
           <div class="container mt-5 pt-5">
+
+          <!-- PHP PEMROSESAN -->
             <?php
               if (isset($_POST['aksi'])) {
                   if ($_POST['aksi'] == "add") {
-                      echo "<h2 class='text-light'>Tambah Data</h2> <a href='index.php'>[Home]</a>";
+                    $inputKdMk = $_POST['inputKdMk'];
+                    $inputNamaMk = $_POST['inputNamaMk'];
+                    $inputSks = $_POST['inputSks'];
+
+                    $query = "INSERT INTO matakuliah VALUES('$inputKdMk', '$inputNamaMk', '$inputSks')";
+                    $sql = mysqli_query($koneksi, $query);
+
+                    if ($sql) {
+                      header("location: kumpulan-tabel.php");
+                    } else {
+                      echo $query;
+                    }
+                    
                   }elseif ($_POST['aksi'] == "edit") {
-                      echo "<h2 class='text-light'>Edit Data</h2> <a href='index.php'>[Home]</a>";
+                    $inputKdMk = $_POST['inputKdMk'];
+                    $inputNamaMk = $_POST['inputNamaMk'];
+                    $inputSks = $_POST['inputSks'];
+
+                    $query = "UPDATE matakuliah SET kodemk='$inputKdMk', nama='$inputNamaMk', jumlah_sks='$inputSks' WHERE kodemk='$inputKdMk';";
+                    $sql = mysqli_query($koneksi, $query);
+
+                    if ($sql) {
+                      header("location: kumpulan-tabel.php");
+                    } else {
+                      echo $query;
+                    }
                   }
               }
 
               if (isset($_GET['hapus'])) {
-                echo "<h2 class='text-light'>Hapus Data</h2> <a href='index.php'>[Home]</a>";
+                $kodemk = $_GET['hapus'];
+                $query = "DELETE FROM matakuliah WHERE kodemk = '$kodemk'";
+                $sql = mysqli_query($koneksi, $query);
+
+                if ($sql) {
+                  header("location: kumpulan-tabel.php");
+                } else {
+                  echo $query;
+                }
+
               }
             ?>
+            <!-- AKHIR PHP PEMROSESAN -->
+
           </div>
           <!-- AKHIR CONTAINER BODY CONTENT -->
         

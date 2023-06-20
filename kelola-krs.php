@@ -1,5 +1,22 @@
 <?php 
   include 'koneksi.php';
+
+  $id = '';
+  $mahasiswa_npm = '';
+  $matakuliah_kodemk = '';
+
+  if (isset($_GET['ubah'])) {
+    $id = $_GET['ubah'];
+
+    $query = "SELECT * FROM krs WHERE id = '$id';";
+    $sql = mysqli_query($koneksi, $query);
+
+    $result = mysqli_fetch_assoc($sql);
+
+    $mahasiswa_npm = $result['mahasiswa_npm'];
+    $matakuliah_kodemk = $result['matakuliah_kodemk'];
+
+  }
 ?>
 
 <!DOCTYPE html>
@@ -52,23 +69,23 @@
     <div class="container text-light mt-5">
       <form action="proses-krs.php" method="POST">
         <div class="mb-3 row">
-          <label for="inputKdMk" class="col-sm-2 col-form-label">Kode MK</label>
+          <label for="inputId" class="col-sm-2 col-form-label">ID</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputKdMk" placeholder="Ex: MK01">
+            <input value="<?php echo $id ?>" type="text" class="form-control" id="inputId" name="inputId" placeholder="ID tidak perlu diisi, akan ditentukan secara otomatis" <?php if ($id == '') {echo "disabled";}; ?> >
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="inputNpmMahasiswa" class="col-sm-2 col-form-label">NPM Mahasiswa</label>
+          <div class="col-sm-10">
+            <input required value="<?php echo $mahasiswa_npm ?>" type="text" class="form-control" id="inputNpmMahasiswa" name="inputNpmMahasiswa" placeholder="Masukkan NPM">
           </div>
         </div>
   
         <div class="mb-3 row">
-          <label for="inputNamaMk" class="col-sm-2 col-form-label">Nama MK</label>
+          <label for="inputKdMK" class="col-sm-2 col-form-label">Kode MK</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputNamaMk" placeholder="Masukkan Nama">
-          </div>
-        </div>
-  
-        <div class="mb-3 row">
-          <label for="inputSks" class="col-sm-2 col-form-label">Jumlah SKS</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputSks" placeholder="Masukkan 1 digit angka, Ex : 3">
+            <input required value="<?php echo $matakuliah_kodemk ?>" type="text" class="form-control" id="inputKdMK" name="inputKdMK" placeholder="Ex : MK01">
           </div>
         </div>
   

@@ -1,5 +1,24 @@
 <?php 
   include 'koneksi.php';
+
+  $npm = '';
+  $nama = '';
+  $jurusan = '';
+  $alamat = '';
+
+  if (isset($_GET['ubah'])) {
+    $npm = $_GET['ubah'];
+
+    $query = "SELECT * FROM mahasiswa WHERE npm = '$npm';";
+    $sql = mysqli_query($koneksi, $query);
+
+    $result = mysqli_fetch_assoc($sql);
+
+    $nama = $result['nama'];
+    $jurusan = $result['jurusan'];
+    $alamat = $result['alamat'];
+
+  }
 ?>
 
 <!DOCTYPE html>
@@ -55,24 +74,24 @@
           <div class="mb-3 row">
             <label for="inputNpm" class="col-sm-2 col-form-label">NPM</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputNpm" placeholder="3 Digit NPM">
+                <input required type="text" class="form-control" id="inputNpm" name="inputNpm" placeholder="Masukkan NPM" value="<?php echo $npm ?>">
               </div>
           </div>
     
           <div class="mb-3 row">
             <label for="inputNamaMhs" class="col-sm-2 col-form-label">Nama</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputNamaMhs" placeholder="Masukkan Nama">
+                <input required type="text" class="form-control" id="inputNamaMhs" name="inputNamaMhs" placeholder="Masukkan Nama" value="<?php echo $nama ?>">
               </div>
           </div>
           
           <div class="mb-3 row">
             <label for="inputJurusan" class="col-sm-2 col-form-label">Jurusan</label>
               <div class="col-sm-10">
-                <select class="form-select" id="inputJurusan">
-                  <option selected>Jurusan</option>
-                  <option value="Sistem Informasi">Sistem Informasi</option>
-                  <option value="Teknik Informatika">Teknik Informatika</option>
+                <select required class="form-select" id="inputJurusan" name="inputJurusan">
+                  <option>Jurusan</option>
+                  <option <?php if ($jurusan == 'Sistem Operasi'){echo "selected";}?>  value="Sistem Operasi"> Sistem Operasi </option>
+                  <option <?php if ($jurusan == 'Teknik Informatika'){echo "selected";}?>  value="Teknik Informatika">Teknik Informatika</option>
                 </select>
               </div>
           </div>
@@ -80,7 +99,7 @@
           <div class="mb-3 row">
             <label for="inputAlamat" class="col-sm-2 col-form-label">Alamat</label>
               <div class="col-sm-10">
-                <textarea class="form-control" id="inputAlamat" rows="3"></textarea>
+                <textarea required class="form-control" id="inputAlamat" name="inputAlamat" rows="3"><?php echo $alamat ?></textarea>
               </div>
           </div>
           
